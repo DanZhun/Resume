@@ -21,11 +21,11 @@ else {
 document.write('<h3>' + greeting + '</h3>' + 'Neet to meet you');
 
 //Date floor
-$(document).ready(function() {
+// $(document).ready(function() {
 
-   let today = new Date();
-   let year = today.getFullYear();
+//    let today = new Date();
+//    let year = today.getFullYear();
   
-    $('#footer').html('<p>Copyright &copy;' + year + ' ' + 'Dan Wu</p>');
+//     $('#footer').html('<p>Copyright &copy;' + year + ' ' + 'Dan Wu</p>');
   
-  });
+//   });

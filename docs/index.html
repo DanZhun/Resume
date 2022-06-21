@@ -13,6 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a0d52eb827.js" crossorigin="anonymous"></script>
 
+
+
   </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -62,7 +64,7 @@
                 <p>
                 生日： 1997/12/02<br>
                 血型：Ｏ型<br>
-                學歷：朝陽科技大學 資管系<br
+                學歷：朝陽科技大學 資管系<br>
                 興趣：排球、寫程式<br>
                 證照：<br>
                 乙級-電腦硬體裝修<br>
@@ -161,12 +163,31 @@
         </div>
     </section>
 
-      <!-- Footer -->
-      <footer class="bg-dark mt-1 py-2 text-white">
-        <div class="container" id="footer" >
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="./js/add-contents.js"></script>
-        </div>
-    </footer>
+      <!-- Footer vue test -->
+        <div class="bg-dark mt-1 py-2 text-white">
+          <div id="Footer"  class="container">
+              <p>{{company}} {{'@' + new Date().getFullYear()}}</p>
+          </div>
+      </div>
+  
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js' integrity='sha512-sJa5KWq3F99QOeijUOm9O+BgDgVtzrWBBagZtjlW7F3I47NO1OaNJvbut+9KOPmjNr4Wb3blU4vQiQdi+Zk6wg==' crossorigin='anonymous'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js' integrity='sha512-r4jE7oCYv1xTgIB5LudpJK6oVI7USDyUXQtbwI/a6vWyZYsHTBWEa8R+UUbpN6cigOqlHsJNRc81mzLW9TfscQ==' crossorigin='anonymous'></script>
+    
+      <script>
+          ;(function(){
+  
+              new Vue({
+                  el: '#Footer',
+                  data:{
+                      copyright: '版權所有 翻印必究',
+                      company: "Dan Wu",
+                      year: '@' + new Date().getFullYear(),
+  
+                  },
+              })
+  
+          })()
+      </script>
+
 </body>
 </html>
