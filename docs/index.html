@@ -178,19 +178,37 @@
       <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js' integrity='sha512-r4jE7oCYv1xTgIB5LudpJK6oVI7USDyUXQtbwI/a6vWyZYsHTBWEa8R+UUbpN6cigOqlHsJNRc81mzLW9TfscQ==' crossorigin='anonymous'></script>
     
       <script>
-          ;(function(){
+        // 方法一 (資料可以改動)
+          // ;(function(){
   
-              new Vue({
-                  el: '#Footer',
-                  data:{
-                      copyright: '版權所有 翻印必究',
-                      company: "Dan Wu",
-                      year: '@' + new Date().getFullYear(),
+          //     new Vue({
+          //         el: '#Footer',
+          //         data:{
+          //             copyright: '版權所有 翻印必究',
+          //             company: "Dan Wu",
+          //             year: '@' + new Date().getFullYear(),
   
-                  },
-              })
+          //         },
+          //     })
+
+          //     Object.freeze(data)
   
-          })()
+          // })()
+
+        // 方法二 (資料不能改動)
+            let data = {
+              copyright : '版權所有 翻印必究',
+              company: "Dan Wu",
+              year: '@' + new Date().getFullYear(),
+            }
+            Object.freeze(data)
+
+            let vm = new Vue({
+              el : '#Footer',
+              data,
+            })
+
+
       </script>
 
 </body>
