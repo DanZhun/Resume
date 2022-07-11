@@ -14,6 +14,7 @@
 
   </head>
 <body>
+  <div id="app">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="#">Dan Wu</a>
@@ -43,33 +44,29 @@
       <header class="header" style=" background-image: url(https://images.unsplash.com/photo-1622455373881-62836f4708d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);">
         <div class="container d-flex align-items-center h-100 ">
             <div class="text-white">
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
               <script src="./js/add-contents.js"></script>
             </div>
         </div>
       </header>
 
       <section class="container py-4">
-        <div class="row ">
+        <div class="row" id="card">
           <!-- card1 -->
           <div class="col-md-4 card py-4   border border-primary" style="width: 16rem;">
             <img src="./images/頭貼.jpg" alt="頭像" class="card-img-top height-s4 img-circle mx-auto">
             <div class="card-body">
-              <h5 class="card-title">吳昱諄</h5>
+              <h5 class="card-title">{{ name }}</h5>
               <p class="card-text">                
                 <i class="fa-solid fa-location-dot"> Nantou, Taiwan</i>
                 <p>
-                生日： 1997/12/02<br>
-                血型：Ｏ型<br>
-                學歷：朝陽科技大學 資管系<br>
+                生日：{{ birthday }}<br>
+                血型：{{ blood }}<br>
+                學歷：{{ school }}<br>
                 興趣：
                 <i class="fa-solid fa-volleyball fa-1x"></i> 排球、
                 <i class="fa-solid fa-camera fa-1x"></i> 拍照、
                 <i class="fa-solid fa-computer fa-1x"></i> Code<br>
-                證照：<br>
-                乙級-電腦硬體裝修<br>
-                TQC -World(2016)<br>
-                TQC+ 程式語言(Python)<br></p>
+                證照：<br>{{ license[0] }}<br>{{ license[1]}}<br>{{ license[2]}}</p>
                 <div class="border border-dark"></div>
                 <p>技能：</p>
                 <i class="fa-brands fa-html5 fa-2x"></i>
@@ -87,23 +84,20 @@
           <div class="col-md-7">
             <div class="card-body">
               <h3>求學經歷</h3>
-                <p>
-                ●國立埔里高級工業職業學校-微電腦修護科<br>
-                ●嶺東科大-資管系<br>
-                ●朝陽科大-資管系<br></p>
+                {{ study[0] }}<br>{{ study[1] }}<br>{{ study[2] }}<br>
                 <div class="border border-dark"></div>
                 <div class="py-2">
-                <p>
-                &emsp;&emsp;
-                &emsp;&emsp;&emsp;&emsp;從小就對電腦有濃厚的興趣，還記得當時的傳統XP電腦，開著GBA模擬器玩著神奇寶貝，還在懵懵懂懂的跟著遊戲線遊玩；在某一天表哥開啟模擬器的<b>金手指</b>，我整個煥然一新，任何遊戲物品都垂手可得，這直接開啟了我對程式的興趣。<br>
-                &emsp;&emsp;國中畢業，我選擇用技優的方式去選讀 <u>國立埔里高工-微電腦修護科</u>，而這也是開啟我面對資訊技術的第一步； 高一時考取人生第一張證照<b>丙級-電腦硬體裝修</b>，
-                之後也陸續學習了網頁架設、網路配線、電子電路設計等...許多課程，最後畢業前也考取了<b>乙級-電腦硬體裝修</b>。
-              </p><br>
-              <p>
-                &emsp;&emsp;大學時期先就讀<u>嶺東科大資管系</u>再轉學至<u>朝陽科大資管系</u>；而在朝陽科大專題寫了購物車網站，從這過程中學習了XAMPP伺服器架設、MySQL建置資料庫、JavaScript、PHP，一手將網頁建置起來，雖然最後的成品沒被使用，但這學習的過程讓我瞭解了，要當一位軟體工程師是非常具有挑戰性的。
-                <br>當然我也非常喜歡挑戰，更期許自己未來可以成為一位優秀的軟體工程師。<br></p>
-                </div>
-            </div>
+                  <h2>工作經歷</h2>
+                  
+                  <h3><b>{{ work1.join('、') }}</b></h3>
+                  {{ workexp1[0]}}<br>{{ workexp1[1]}}<br>{{ workexp1[2]}}
+                  </p>
+                  <div class="border border-dark"></div>
+                  <p>
+                  <h3><b>{{ work2 }}</b></h3>
+                  {{ workexp2[0] }}<br>{{ workexp2[1] }}<br>{{ workexp2[2] }}
+                  </p>
+                  
           </div>
         </div>
       </section>
@@ -127,27 +121,6 @@
         </div>
       </section>
 
-      <section class="container py-5">
-      <div class="row">
-        <div class="col-md-12 py-2">
-            <h2>工作經歷</h2>
-            <h3><b>NU PAST、日漫咖啡、朵朵雲典藏鬆餅咖啡</b></h3>
-            ●學習了餐點的製作<br>
-            ●面對客人間的溝通<br>
-            ●問題間的危機處理<br>
-            </p>
-            <p>
-            <h3><b>百佳泰股份有限公司-測試工程師(實習生)</b></h3>
-            ●更加瞭解科技產業<br>
-            ●設備上的故障排除<br>
-            ●測試硬體設備<br>
-            </p>
-        </div>
-        <div class="border border-dark"></div>
-      </section>
-
-      
-
       <section class="container">
           <div class="row">
             <h1><b>活動經歷</b></h1>
@@ -161,55 +134,21 @@
               </div>
 
               <div class="py-2">
-                ●朝陽科大校隊男排<br>
+                {{ activity }}
               </div>
           </div>
       </section>
-
+  
       <!-- Footer vue test -->
       <div class="py-2"></div>
       <div class="bg-dark mt-1 py-2 text-white">
           <div id="Footer"  class="container">
-              <p>{{company}} {{'@' + new Date().getFullYear()}}</p>
+              <p>{{ company }} {{'@' + new Date().getFullYear()}}</p>
           </div>
       </div>
-  
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js' integrity='sha512-sJa5KWq3F99QOeijUOm9O+BgDgVtzrWBBagZtjlW7F3I47NO1OaNJvbut+9KOPmjNr4Wb3blU4vQiQdi+Zk6wg==' crossorigin='anonymous'></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js' integrity='sha512-r4jE7oCYv1xTgIB5LudpJK6oVI7USDyUXQtbwI/a6vWyZYsHTBWEa8R+UUbpN6cigOqlHsJNRc81mzLW9TfscQ==' crossorigin='anonymous'></script>
-    
-      <script>
-        // 方法一 (資料可以改動)
-          // ;(function(){
-  
-          //     new Vue({
-          //         el: '#Footer',
-          //         data:{
-          //             copyright: '版權所有 翻印必究',
-          //             company: "Dan Wu",
-          //             year: '@' + new Date().getFullYear(),
-  
-          //         },
-          //     })
-
-          //     Object.freeze(data)
-  
-          // })()
-
-        // 方法二 (資料不能改動)
-            let data = {
-              copyright : '版權所有 翻印必究',
-              company: "Dan Wu",
-              year: '@' + new Date().getFullYear(),
-            }
-            Object.freeze(data)
-
-            let vm = new Vue({
-              el : '#Footer',
-              data,
-            })
-
-
-      </script>
+  </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js'></script>
+<script src="js/vue.js"></script>
 
 </body>
 </html>
