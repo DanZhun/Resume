@@ -52,8 +52,8 @@
       <section class="container py-4">
         <div class="row" id="card">
           <!-- card1 -->
-          <div class="col-md-4 card py-4   border border-primary" style="width: 16rem;">
-            <img src="./images/大頭照.jpg" alt="頭像" class="card-img-top height-s4 img-circle mx-auto border-primary border">
+          <div class="col-md-4 card py-4 border border-primary" style="width: 20rem;">
+            <img src="./images/大頭照.jpg" alt="頭像" class="card-img-top height-s4 img-circle mx-auto border">
             <div class="card-body">
               <h5 class="card-title">{{ name }}</h5>
               <p class="card-text">                
@@ -61,7 +61,7 @@
                 <p>
                 生日：{{ birthday }}<br>
                 血型：{{ blood }}<br>
-                學歷：{{ school }}<br>
+                學歷：<br>{{ school }}<br>
                 興趣：
                 <i class="fa-solid fa-volleyball fa-1x"></i> 排球、
                 <i class="fa-solid fa-camera fa-1x"></i> 拍照、
@@ -82,19 +82,21 @@
           <div class="col-md-1"></div>
           <!-- card2 -->
           <div class="col-md-7">
-            <div class="card-body">
-              <h3>求學經歷</h3>
+            <div class="card-body py-2">
+              <h2><b>求學經歷</b></h2>
                 {{ study[0] }}<br>{{ study[1] }}<br>{{ study[2] }}<br>
+                <h2><b>現職</b></h2>
+                {{ currentjob[0] }}<br><br>
                 <div class="border border-dark"></div>
                 <div class="py-2">
-                  <h2>工作經歷</h2>
+                  <h2><b>工作經歷</b></h2>
                   
-                  <h3><b>{{ work1.join('、') }}</b></h3>
+                  <h4>{{ work1.join('、') }}</h4>
                   {{ workexp1[0]}}<br>{{ workexp1[1]}}<br>{{ workexp1[2]}}
                   </p>
                   <div class="border border-dark"></div>
                   <p>
-                  <h3><b>{{ work2 }}</b></h3>
+                  <h2><b>{{ work2 }}</b></h2>
                   {{ workexp2[0] }}<br>{{ workexp2[1] }}<br>{{ workexp2[2] }}
                   </p>
                   
@@ -114,14 +116,14 @@
                           <b>A language that doesn't affect the way you think about programming, is not worth knowing.
                           - <u>Alan Perlis</u></b>
                         </p>
-                        <p>寫程式真的是世界上最酷的事</p>           
+                        <!-- <p>寫程式真的是世界上最酷的事</p>            -->
                       </div>
                 </div>
             </div>
         </div>
       </section>
 
-      <section class="container">
+      <!-- <section class="container">
           <div class="row">
             <h1><b>活動經歷</b></h1>
               <div class="col-md-5">
@@ -137,7 +139,7 @@
                 {{ activity }}
               </div>
           </div>
-      </section>
+      </section> -->
   
       <!-- Footer vue test -->
       <div class="py-2"></div>
