@@ -29,3 +29,34 @@
 .blue-color{
     color: #2F4BC2;
 }
+/* Make sure the body styles and other styles are applied as before */
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #E0F7FA; /* Light cyan background */
+    font-family: 'Arial', sans-serif;
+    color: #004080; /* Dark blue text color */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Add the following new styles */
+.image-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.image-list li {
+    list-style: none;
+    margin: 0 10px; /* Add space between images */
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Optional: Set a max height for the images */
+}
