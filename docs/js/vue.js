@@ -20,7 +20,7 @@
             name : '吳昱諄',
             birthday : '1997/12/02',
             blood : 'A型',
-            MBTI : 'INTJ',
+            MBTI : 'INTJ-A',
             school : '彰化師大資管系數科組 碩二 (就讀中)',
             license : ['乙級-電腦硬體裝修', 'TQC-World(2016)', 'TQC+程式語言(Python)',],
         //Study experience    
