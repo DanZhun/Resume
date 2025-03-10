@@ -28,24 +28,26 @@
           <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-2">
 
-
-              <li class="nav-item">Experience
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="MenuLink">School</ul>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="MenuLink">Work</ul>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="MenuLink">Activity</ul>
+              <!-- Experience 下拉菜單-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="MenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Experience</a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="MenuLink">
+                    <li>
+                      <a class="dropdown-item" href="#school">School</a><br>
+                      <a class="dropdown-item" href="#work">Work</a><br>
+                      <a class="dropdown-item" href="#activity">Activity</a>
+                    </li></ul>
               </li>
+              <!--About 下拉菜單 -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="MenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   About
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="MenuLink">
                   <li><a class="dropdown-item" href="https://danzhun.github.io/workdemo/">DemoWork</a></li>
-                  <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
               </li>
             </ul>
-            <!-- <button type="button" class="btn btn-primary text-white">Primary</button> -->
           </div>
         </div>
       </nav>
@@ -61,8 +63,8 @@
 <div id="app">
       <section class="container py-4">
         <div class="row" id="card">
-          <!-- card1 -->
-          <div class="col-md-4 card py-4 border border-primary" style="width: 20rem;">
+          <!--Introduce card -->
+          <div class="col-md-4 card py-4 border border-primary" style="width: 50rem;">
             <img src="./images/大頭照.jpg" alt="頭像" class="card-img-top height-s4 img-circle mx-auto border">
             <div class="card-body">
               <h5 class="card-title">{{ name }}</h5>
@@ -90,44 +92,7 @@
                 <i class="fa-brands fa-react fa-2x"></i>
                 </div>
           </div>
-          <div class="col-md-1"></div>
-          <!-- card2 -->
-          <div class="col-md-5">
-            <div class="card-body py-2">
-              <!-- <h2><b>現職</b></h2>
-                {{ currentjob[0] }}<br><br> -->
-              <h2><b>求學經歷</b></h2>
-                {{ study[0] }}<br>
-                {{ study[1] }}<br>
-                {{ study[2] }}<br><br>
-                <div class="border border-dark"></div>
-                <div class="py-2">
-                  <h2><b>工作經歷</b></h2>
-                  
-                  <h4>{{ work1.join('、') }}</h4>
-                  {{ workexp1[0]}}<br>{{ workexp1[1]}}<br>{{ workexp1[2]}}
-                  </p>
-                  <div class="border border-dark"></div>
-                  <p>
-                  <h2><b>{{ work2 }}</b></h2>
-                  {{ workexp2[0] }}<br>{{ workexp2[1] }}<br>{{ workexp2[2] }}
-                  </p>
-                  
-          </div>
-        </div>
-      
-        <!-- <section class ="container">
-        <div class="row">
-          <h1><b>Demo</b></h1>
-            <div class="col-md-5">
-                <a href="https://danzhun.github.io/Demo1/">靜態網頁 Demo01</a><br>          
-                <a href="https://codepen.io/danzhun/pen/ExEOrNp">TodoList (React|未串API)</a>
-  
-             </div>
-        </div>
-      </section> -->
-
-      </section>
+          <div class="col-md-1"></div></section>
       
       <section class="py-5 mt-6" style="background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png)">
         <div class="container">
@@ -137,21 +102,37 @@
                 </div>
                 <div class="col-md-4 d-flex align-items-center">
                   <img src="./images/undraw_dev_productivity_re_fylf.svg"  class="img-fluid" alt="">
-                    <!-- <div>
-                        <p>
-                          <b>A language that doesn't affect the way you think about programming, is not worth knowing.
-                          - <u>Alan Perlis</u></b>
-                        </p>
-                        <p>寫程式真的是世界上最酷的事</p>           
-                      </div> -->
                 </div>
             </div>
         </div>
       </section>
-
-      <section class="container">
+      <section class="container py-4">
+          <!--Experience card -->
+          <div >
+            <div class="card-body py-2">
+              <h2 id="school"><b >求學經歷</b></h2>
+                {{ study[0] }}<br>
+                {{ study[1] }}<br>
+                {{ study[2] }}<br><br>
+                <div class="border border-dark"></div>
+                <div class="py-2">
+                  <h2 id="work"><b>工作經歷</b></h2>
+                  <br>
+                  <h4>{{ work1.join('、') }}</h4><br>
+                  {{ workexp1[0]}}<br>{{ workexp1[1]}}<br>{{ workexp1[2]}}
+                  </p>
+                  <div class="border border-dark"></div>
+                  <p>
+                  <h2><b>{{ work2 }}</b></h2><br>
+                  {{ workexp2[0] }}<br>{{ workexp2[1] }}<br>{{ workexp2[2] }}
+                  </p>
+                  
+          </div>
+        </div>
+      </section>
+      <section class="container" >
           <div class="row">
-            <h1><b>活動經歷</b></h1>
+            <h1 id="activity"><b>活動經歷</b></h1>
               <div class="col-md-5">
                   <img class="height-s5 w-100 objec-fit-cover" src="./images/校隊.png">
               </div>
