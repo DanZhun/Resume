@@ -82,9 +82,15 @@
                 證照：<br>{{ license[0] }}<br>{{ license[1]}}<br>{{ license[2]}}</p>
                 <div class="border border-dark"></div>
                 <p>技能：</p>
-                <i class="fa-brands fa-html5 fa-2x"></i>
-                <i class="fa-brands fa-css3-alt fa-2x"></i>
-                <i class="fa-brands fa-js fa-2x"></i>
+                <i class="fa-brands fa-html5 fa-2x">
+                  <!--進度條-->
+                </i>
+                <i class="fa-brands fa-css3-alt fa-2x">
+                  <!--進度條-->
+                </i>
+                <i class="fa-brands fa-js fa-2x">
+                  <!--進度條-->
+                </i>
                 <!-- <i class="fa-brands fa-bootstrap fa-2x"></i> -->
                 <!-- <i class="fa-brands fa-python fa-2x"></i> -->
                 <i class="fa-solid fa-database fa-2x"></i>
@@ -113,7 +119,8 @@
               <h2 id="school"><b >求學經歷</b></h2>
                 {{ study[0] }}<br>
                 {{ study[1] }}<br>
-                {{ study[2] }}<br><br>
+                {{ study[2] }}<br>
+                {{ study[3] }}<br><br>
                 <div class="border border-dark"></div>
                 <div class="py-2">
                   <h2 id="work"><b>工作經歷</b></h2>
@@ -130,11 +137,12 @@
           </div>
         </div>
       </section>
-      <section class="container" > #輪播圖
+      <!--輪播圖-->
+      <section class="container" > 
           <div class="row">
             <h1 id="activity"><b>活動經歷</b></h1>
             <div id="carouselExampleCaptions" class="col-md-5 carousel slide" data-bs-ride="carousel">
-              <div class="carousel slide" id="carouselExampleCaptions" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel slide" id="carouselExampleCaptions" data-bs-ride="carousel" data-bs-interval="2000" >
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="./images/大專/IMG_9703.JPG" class="d-block w-100" alt="...">
@@ -172,7 +180,7 @@
                 </button>
             </div>
       </section>
-  
+      <button class="toTop-arrow" aria-label="Back to Top"></button>
       <!-- Footer vue test -->
       <div class="py-2"></div>
       <div class="bg-dark mt-1 py-2 text-white">

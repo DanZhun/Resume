@@ -82,3 +82,73 @@ body {
         height: 250px; /* 小螢幕減小高度 */
     }
 }
+/*置頂按鈕*/
+.toTop-arrow {
+    /* 基礎樣式 */
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 33%;
+    opacity: 0.6;
+    background: #000;
+    cursor: pointer;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 添加過渡效果 */
+
+    /* 使用CSS變量定義尺寸 */
+    --size: 2.5rem; /* 默認40px */
+    width: var(--size);
+    height: var(--size);
+}
+
+.toTop-arrow::before,
+.toTop-arrow::after {
+    /* 箭頭基礎樣式 */
+    position: absolute;
+    content: "";
+    background: #2F4BC2;
+    border-radius: 3px;
+    top: 50%; /* 垂直居中 */
+    transform-origin: center;
+}
+
+.toTop-arrow::before {
+    --arrow-size: calc(var(--size) * 0.45); /* 箭頭寬度為按鈕的45% */
+    width: var(--arrow-size);
+    height: calc(var(--size) * 0.12); /* 高度隨按鈕大小縮放 */
+    transform: rotate(-45deg) translate(0, -50%);
+    left: calc(var(--size) * 0.2); /* 統一左邊距 */
+}
+
+.toTop-arrow::after {
+    --arrow-size: calc(var(--size) * 0.45);
+    width: var(--arrow-size);
+    height: calc(var(--size) * 0.12);
+    transform: rotate(45deg) translate(0, -50%);
+    right: calc(var(--size) * 0.2); /* 統一右邊距 */
+}
+
+.toTop-arrow:focus {
+    outline: none;
+}
+
+.toTop-arrow:hover {
+    opacity: 1; /* 懸浮時完全不透明 */
+    transform: scale(1.1); /* 輕微放大 */
+}
+
+/* 響應式尺寸 */
+@media (min-width: 768px) {
+    .toTop-arrow {
+        --size: 3rem; /* 48px */
+    }
+}
+
+@media (min-width: 1200px) {
+    .toTop-arrow {
+        --size: 3.5rem; /* 56px */
+    }
+}

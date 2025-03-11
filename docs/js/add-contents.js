@@ -20,15 +20,23 @@ else {
 
 document.write('<h3>' + greeting + '</h3>' + 'Neet to meet you');
 
-//Date floor
-// $(document).ready(function() {
-
-//    let today = new Date();
-//    let year = today.getFullYear();
-  
-//     $('#footer').html('<p>Copyright &copy;' + year + ' ' + 'Dan Wu</p>');
-  
-//   });
-
+//輪播圖
 var myCarousel = document.querySelector('#myCarousel')
 var carousel = new bootstrap.Carousel(myCarousel)
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backTop = document.querySelector('.toTop-arrow');
+    
+    backTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    let timeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        }, 50);
+    });
+});
