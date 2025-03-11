@@ -154,3 +154,10 @@ body {
         height: clamp(80px, 12vw, 120px);
     }
 }
+
+@media (max-width: 812px) { /* iPhone 13 Pro 寬度 */
+    .carousel-inner,
+    .carousel-item img {
+        height: clamp(10rem, 50vw, 15.625rem); /* 適配小螢幕 */
+    }
+}
