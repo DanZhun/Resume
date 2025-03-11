@@ -95,8 +95,8 @@ body {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    display: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* 初始隱藏 */
 
     /* 自適應尺寸 */
     --size: clamp(2.5rem, 3vw + 1rem, 3.5rem); /* 40px ~ 56px */
@@ -115,9 +115,9 @@ body {
 }
 
 .toTop-arrow::before {
-    --arrow-width: calc(var(--size) * 0.45); /* 箭頭寬度為按鈕的45% */
+    --arrow-width: calc(var(--size) * 0.45);
     width: var(--arrow-width);
-    height: calc(var(--size) * 0.12); /* 高度為按鈕的12% */
+    height: calc(var(--size) * 0.12);
     transform: rotate(-45deg) translate(0, -50%);
     left: calc(var(--size) * 0.2);
 }
@@ -134,7 +134,17 @@ body {
     outline: none;
 }
 
-.toTop-arrow:hover {
+.toTop-arrow:hover,
+.toTop-arrow:active { /* 添加:active以支持觸控 */
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(360deg);
+}
+
+/* 針對平板和手機調整 */
+@media (max-width: 1024px) {
+    .toTop-arrow {
+        --size: clamp(2rem, 5vw, 3rem); /* 手機和平板最小32px，最大48px */
+        right: 0.5rem; /* 靠近邊緣 */
+        bottom: 0.5rem;
+    }
 }

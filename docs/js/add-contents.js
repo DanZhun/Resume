@@ -24,19 +24,31 @@ document.write('<h3>' + greeting + '</h3>' + 'Neet to meet you');
 var myCarousel = document.querySelector('#myCarousel')
 var carousel = new bootstrap.Carousel(myCarousel)
 
-
+//置頂按鈕
 document.addEventListener('DOMContentLoaded', () => {
     const backTop = document.querySelector('.toTop-arrow');
     
-    backTop.addEventListener('click', () => {
+    // 點擊或觸控返回頂部
+    const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    backTop.addEventListener('click', scrollToTop);
+    backTop.addEventListener('touchstart', (e) => {
+        e.preventDefault(); // 防止觸控滾動干擾
+        scrollToTop();
     });
 
+    // 滾動事件處理
     let timeout;
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-            backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+            const scrollPosition = window.scrollY || window.pageYOffset; // 兼容性增強
+            backTop.style.display = scrollPosition > 300 ? 'block' : 'none';
+            // 調試用：console.log('Scroll:', scrollPosition, 'Display:', backTop.style.display);
         }, 50);
-    });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // 初始檢查
 });
