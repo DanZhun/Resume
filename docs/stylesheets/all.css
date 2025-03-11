@@ -11089,95 +11089,92 @@ textarea.form-control-lg {
   background-color: black;
 }
 
+/* 引入字體 */
+/* 重用工具類 */
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.img-circle {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-}
-
-.object-fit-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.height-s5 {
-  height: 360px;
-}
-
-.height-s3 {
-  height: 180px;
-}
-
-.height-s4 {
-  height: 100px;
-}
-
-.blue-color {
-  color: #2F4BC2;
-}
-
-/* Make sure the body styles and other styles are applied as before */
-body {
-  margin: 0px;
-  padding: 0px;
-  background-color: #E0F7FA; /* Light cyan background */
-  font-family: "Arial", sans-serif;
-  color: #004080; /* Dark blue text color */
 }
 
 .text-center {
   text-align: center;
 }
 
-/* Add the following new styles */
-.image-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-.image-list li {
-  list-style: none;
-  margin: 0 10px; /* Add space between images */
+/* 圖片相關樣式 */
+.img-circle {
+  border-radius: 50%;
+  width: clamp(100px, 15vw, 150px); /* 自適應寬度：100px ~ 150px */
+  height: clamp(100px, 15vw, 150px);
+  -o-object-fit: cover;
+     object-fit: cover; /* 統一使用object-fit */
 }
 
 .img-fluid {
   max-width: 100%;
   height: auto;
-  max-height: 200px; /* Optional: Set a max height for the images */
-}
-
-/* 設置輪播容器高度 */
-.carousel-inner {
-  height: 400px; /* 統一高度，可根據需求調整 */
-}
-
-/* 統一圖片大小 */
-.carousel-item img {
-  width: 100%; /* 寬度填滿容器 */
-  height: 400px; /* 與容器高度一致 */
+  max-height: clamp(150px, 20vw, 200px); /* 自適應最大高度 */
   -o-object-fit: cover;
-     object-fit: cover; /* 保持比例，裁剪多餘部分 */
-  -o-object-position: center;
-     object-position: center; /* 圖片居中顯示 */
+     object-fit: cover;
 }
 
-/* 響應式調整 */
-@media (max-width: 768px) {
-  .carousel-inner,
-  .carousel-item img {
-    height: 250px; /* 小螢幕減小高度 */
-  }
+/* 統一高度系統（使用rem代替固定px） */
+.height-s3 {
+  height: clamp(8rem, 20vw, 11.25rem); /* ~128px ~ 180px */
 }
-/*置頂按鈕*/
+
+.height-s4 {
+  height: clamp(5rem, 12vw, 6.25rem); /* ~80px ~ 100px */
+}
+
+.height-s5 {
+  height: clamp(15rem, 40vw, 22.5rem); /* ~240px ~ 360px */
+}
+
+/* 顏色定義 */
+.blue-color {
+  color: #2F4BC2;
+}
+
+/* 全局樣式 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E0F7FA;
+  font-family: "LXGW WenKai TC", "Arial", sans-serif; /* 優先使用自訂字體 */
+  color: #004080;
+  overflow-x: hidden; /* 防止水平滾動 */
+}
+
+/* 圖片列表 */
+.image-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-wrap: wrap; /* 響應式換行 */
+  gap: 1rem; /* 使用gap替代margin */
+}
+
+.image-list li {
+  list-style: none;
+}
+
+/* 輪播樣式 */
+.carousel-inner {
+  height: clamp(15rem, 40vw, 25rem); /* 240px ~ 400px */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: clamp(15rem, 40vw, 25rem);
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* 返回頂部按鈕 */
 .toTop-arrow {
-  /* 基礎樣式 */
   padding: 0;
   margin: 0;
   border: 0;
@@ -11186,12 +11183,11 @@ body {
   background: #000;
   cursor: pointer;
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: clamp(0.5rem, 2vw, 1rem); /* 自適應右邊距 */
+  bottom: clamp(0.5rem, 2vw, 1rem);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  display: none; /* 初始隱藏 */
-  /* 自適應尺寸 */
-  --size: clamp(2.5rem, 3vw + 1rem, 3.5rem); /* 40px ~ 56px */
+  display: none;
+  --size: clamp(2rem, 4vw, 3.5rem); /* 32px ~ 56px */
   width: var(--size);
   height: var(--size);
 }
@@ -11227,16 +11223,25 @@ body {
 }
 
 .toTop-arrow:hover,
-.toTop-arrow:active { /* 添加:active以支持觸控 */
+.toTop-arrow:active {
   opacity: 1;
   transform: scale(1.1) rotate(360deg);
 }
 
-/* 針對平板和手機調整 */
+/* 響應式調整 */
 @media (max-width: 1024px) {
-  .toTop-arrow {
-    --size: clamp(2rem, 5vw, 3rem); /* 手機和平板最小32px，最大48px */
-    right: 0.5rem; /* 靠近邊緣 */
-    bottom: 0.5rem;
+  .carousel-inner,
+  .carousel-item img {
+    height: clamp(10rem, 30vw, 15.625rem); /* 160px ~ 250px */
+  }
+  .image-list {
+    flex-direction: column; /* 平板以下垂直排列 */
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .img-circle {
+    width: clamp(80px, 12vw, 120px); /* 手機更小 */
+    height: clamp(80px, 12vw, 120px);
   }
 }/*# sourceMappingURL=all.css.map */
