@@ -11189,38 +11189,37 @@ body {
   right: 1rem;
   bottom: 1rem;
   display: none;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* 添加過渡效果 */
-  /* 使用CSS變量定義尺寸 */
-  --size: 2.5rem; /* 默認40px */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* 自適應尺寸 */
+  --size: clamp(2.5rem, 3vw + 1rem, 3.5rem); /* 40px ~ 56px */
   width: var(--size);
   height: var(--size);
 }
 
 .toTop-arrow::before,
 .toTop-arrow::after {
-  /* 箭頭基礎樣式 */
   position: absolute;
   content: "";
   background: #2F4BC2;
   border-radius: 3px;
-  top: 50%; /* 垂直居中 */
+  top: 50%;
   transform-origin: center;
 }
 
 .toTop-arrow::before {
-  --arrow-size: calc(var(--size) * 0.45); /* 箭頭寬度為按鈕的45% */
-  width: var(--arrow-size);
-  height: calc(var(--size) * 0.12); /* 高度隨按鈕大小縮放 */
+  --arrow-width: calc(var(--size) * 0.45); /* 箭頭寬度為按鈕的45% */
+  width: var(--arrow-width);
+  height: calc(var(--size) * 0.12); /* 高度為按鈕的12% */
   transform: rotate(-45deg) translate(0, -50%);
-  left: calc(var(--size) * 0.2); /* 統一左邊距 */
+  left: calc(var(--size) * 0.2);
 }
 
 .toTop-arrow::after {
-  --arrow-size: calc(var(--size) * 0.45);
-  width: var(--arrow-size);
+  --arrow-width: calc(var(--size) * 0.45);
+  width: var(--arrow-width);
   height: calc(var(--size) * 0.12);
   transform: rotate(45deg) translate(0, -50%);
-  right: calc(var(--size) * 0.2); /* 統一右邊距 */
+  right: calc(var(--size) * 0.2);
 }
 
 .toTop-arrow:focus {
@@ -11228,18 +11227,6 @@ body {
 }
 
 .toTop-arrow:hover {
-  opacity: 1; /* 懸浮時完全不透明 */
-  transform: scale(1.1); /* 輕微放大 */
-}
-
-/* 響應式尺寸 */
-@media (min-width: 768px) {
-  .toTop-arrow {
-    --size: 3rem; /* 48px */
-  }
-}
-@media (min-width: 1200px) {
-  .toTop-arrow {
-    --size: 3.5rem; /* 56px */
-  }
+  opacity: 1;
+  transform: scale(1.1);
 }/*# sourceMappingURL=all.css.map */
