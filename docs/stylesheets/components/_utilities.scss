@@ -61,3 +61,24 @@ body {
     height: auto;
     max-height: 200px; /* Optional: Set a max height for the images */
 }
+
+/* 設置輪播容器高度 */
+.carousel-inner {
+    height: 400px; /* 統一高度，可根據需求調整 */
+}
+
+/* 統一圖片大小 */
+.carousel-item img {
+    width: 100%; /* 寬度填滿容器 */
+    height: 400px; /* 與容器高度一致 */
+    object-fit: cover; /* 保持比例，裁剪多餘部分 */
+    object-position: center; /* 圖片居中顯示 */
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .carousel-inner,
+    .carousel-item img {
+        height: 250px; /* 小螢幕減小高度 */
+    }
+}

@@ -29,3 +29,6 @@ document.write('<h3>' + greeting + '</h3>' + 'Neet to meet you');
 //     $('#footer').html('<p>Copyright &copy;' + year + ' ' + 'Dan Wu</p>');
   
 //   });
+
+var myCarousel = document.querySelector('#myCarousel')
+var carousel = new bootstrap.Carousel(myCarousel)

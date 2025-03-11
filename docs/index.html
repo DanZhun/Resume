@@ -130,22 +130,47 @@
           </div>
         </div>
       </section>
-      <section class="container" >
+      <section class="container" > #輪播圖
           <div class="row">
             <h1 id="activity"><b>活動經歷</b></h1>
-              <div class="col-md-5">
-                  <img class="height-s5 w-100 objec-fit-cover" src="./images/校隊.png">
-              </div>
-              <div class="col-md-5 d-flex align-items-center">
-                  <div>
-                    <img class="height-s5 w-100 objec-fit-cover" src="./images/素描.png">
-                  </div>
-              </div>
-
-              <div class="py-2">
-                {{ activity }}
-              </div>
-          </div>
+            <div id="carouselExampleCaptions" class="col-md-5 carousel slide" data-bs-ride="carousel">
+              <div class="carousel slide" id="carouselExampleCaptions" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/大專/IMG_9703.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/大專/IMG_2856.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/大專/IMG_3469.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/大專/IMG_9706.JPG" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/大專/校隊.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
       </section>
   
       <!-- Footer vue test -->
