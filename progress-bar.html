@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進度條展示</title>
+    <style>
+        #progressContainer {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #progressBar {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>進度條展示</h1>
+    <div id="progressContainer">
+        <div id="progressBar"></div>
+    </div>
+    <p>進度：<span id="progressValue">75%</span></p>
+    <button onclick="updateProgress()">增加進度</button>
+    <button onclick="setProgress(75)">設定進度為 75%</button>
+
+    <script>
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressValue = document.getElementById('progressValue');
+            let currentProgress = parseInt(progressValue.textContent);
+            if (currentProgress < 100) {
+                currentProgress += 10;
+                progressBar.style.width = `${currentProgress}%`;
+                progressValue.textContent = `${currentProgress}%`;
+            }
+        }
+
+        function setProgress(value) {
+            const progressBar = document.getElementById('progressBar');
+            const progressValue = document.getElementById('progressValue');
+            if (value >= 0 && value <= 100) {
+                progressBar.style.width = `${value}%`;
+                progressValue.textContent = `${value}%`;
+            }
+        }
+    </script>
+</body>
+</html>
